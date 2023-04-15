@@ -39,8 +39,8 @@ public class StudentService {
         return studentRepository.getAllStudents();
     }
 
-    public Teacher deleteTeacherByName(String teacher) {
-        return studentRepository.deleteTeacherByName(teacher);
+    public void deleteTeacherByName(String teacher) {
+        studentRepository.deleteTeacherByName(teacher);
     }
 
     public void AllTeachers() {

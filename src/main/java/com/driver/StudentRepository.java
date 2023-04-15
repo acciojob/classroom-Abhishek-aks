@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 @Repository
@@ -71,31 +72,34 @@ public class StudentRepository {
     }
 
 
-    public Teacher deleteTeacherByName(String name) {
-        Teacher teacher = hmteacher.get(name);
-        hmteacher.remove(name);
-        String tname;
-        for(Student student: hmpair.get(teacher)) {
-            hmstudent.remove(student.getName());
-
+    public void deleteTeacherByName(String Tname) {
+        List<String> studentslist = new ArrayList<>();
+        if( hmteacher.containsKey(Tname)){
+            studentslist =hmpair.get(Tname);
+            for(String student : studentslist) {
+                if (hmstudent.containsKey(student)){
+                    hmstudent.remove(student);
+                }
+            }
+            if (hmteacher.containsKey(Tname)) {
+                hmteacher.remove(Tname);
+            }
+            hmpair.remove(Tname);
         }
-        tname = hmpair.remove(teacher);
-        return tname;
-
-        }
+    }
 
     public void AllTeachers() {
-        for(Teacher teacher: hmteacher.values())
-        {
-        for(Student student: hmpair.get(teacher))
-        {
-        hmstudent.remove(student.getName());
+        HashSet<String> studentset = new HashSet<>();
+        for(String Tname: hmpair.keySet()) {
+           for(String Sname: hmpair.get(Tname))
+               studentset.add(Sname);
+            }
+        for (String sName : studentset){
+            if (hmstudent.containsKey(sName)){
+                hmstudent.remove(sName);
+            }
         }
-        }
-        hmpair.clear();
-        hmteacher.clear();
-
-        }
+    }
 
     public List<String> getStudentsByTeacherName(String teacher) {
         List<String> studentList = new ArrayList<>();
