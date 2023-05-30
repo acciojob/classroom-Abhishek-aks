@@ -56,50 +56,50 @@ public class StudentRepository {
 
 
 
-//    public List<String> getAllStudents() {
-//        List<String> students = new ArrayList<>();
-//        for(String stud: hmstudent.keySet()){
-//            students.add(stud);
-//        }
-//        return students;
-//    }
-//
-//
-//    public void deleteTeacherByName(String Tname) {
-//        List<String> studentslist = new ArrayList<>();
-//        if( hmteacher.containsKey(Tname)){
-//            studentslist =hmpair.get(Tname);
-//            for(String student : studentslist) {
-//                if (hmstudent.containsKey(student)){
-//                    hmstudent.remove(student);
-//                }
-//            }
-//            if (hmteacher.containsKey(Tname)) {
-//                hmteacher.remove(Tname);
-//            }
-//            hmpair.remove(Tname);
-//        }
-//    }
-//
-//    public void AllTeachers() {
-//        HashSet<String> studentset = new HashSet<>();
-//        for(String Tname: hmpair.keySet()) {
-//           for(String Sname: hmpair.get(Tname))
-//               studentset.add(Sname);
-//            }
-//        for (String sName : studentset){
-//            if (hmstudent.containsKey(sName)){
-//                hmstudent.remove(sName);
-//            }
-//        }
-//    }
-//
-//    public List<String> getStudentsByTeacherName(String teacher) {
-//        List<String> studentList = new ArrayList<>();
-//        if(hmpair.containsKey(hmteacher.get(teacher))) {
-//            studentList = hmpair.get(hmteacher.get(teacher));
-//        }
-//        return studentList;
+    public List<String> getAllStudents() {
+        List<String> students = new ArrayList<>();
+        for(String stud: hmstudent.keySet()){
+            students.add(stud);
+        }
+        return students;
+    }
+
+
+    public void deleteTeacherByName(String Tname) {
+        List<String> studentslist = new ArrayList<>();
+        if( hmteacher.containsKey(Tname)){
+            studentslist =hmpair.get(Tname);
+            for(String student : studentslist) {
+                if (hmstudent.containsKey(student)){
+                    hmstudent.remove(student);
+                }
+            }
+            if (hmteacher.containsKey(Tname)) {
+                hmteacher.remove(Tname);
+            }
+            hmpair.remove(Tname);
+        }
+    }
+
+    public void AllTeachers() {
+        HashSet<String> studentset = new HashSet<>();
+        for(String Tname: hmpair.keySet()) {
+           for(String Sname: hmpair.get(Tname))
+               studentset.add(Sname);
+            }
+        for (String sName : studentset){
+            if (hmstudent.containsKey(sName)){
+                hmstudent.remove(sName);
+            }
+        }
+    }
+
+    public List<String> getStudentsByTeacherName(String teacher) {
+        List<String> studentList = new ArrayList<>();
+        if(hmpair.containsKey(hmteacher.get(teacher))) {
+            studentList = hmpair.get(hmteacher.get(teacher));
+        }
+        return studentList;
     }
 
 }
