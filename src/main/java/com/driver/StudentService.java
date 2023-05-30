@@ -10,40 +10,40 @@ public class StudentService {
 
     @Autowired
     StudentRepository studentRepository;
+
     public void addStudent(Student student) {
-    studentRepository.addStudent(student);
+        studentRepository.addStudent(student);
     }
 
     public void addTeacher(Teacher teacher) {
         studentRepository.addTeacher(teacher);
     }
 
-    public void addStudentTeacherPair(String student, String teacher) {
-        studentRepository.addStudentTeacherPair(student, teacher);
+    public void addStudentTeacherPair(String studentName, String teacherName) {
+        studentRepository.addStudentTeacherPair(studentName, teacherName);
     }
 
-
-    public Student getStudentByName(String name) {
-        return studentRepository.getStudentByName(name);
+    public Student getStudentByName(String studentName) {
+        return studentRepository.getStudentByName(studentName);
     }
 
-    public Teacher getTeacherByName(String name) {
-        return studentRepository.getTeacherByName(name);
+    public Teacher getTeacherByName(String teacherName) {
+        return studentRepository.getTeacherByName(teacherName);
     }
 
-    public List<String> getStudentsByTeacherName(String teacher) {
-        return studentRepository.getStudentsByTeacherName(teacher);
+    public List<String> getStudentsByTeacherName(String teacherName) {
+        return studentRepository.getStudentsByTeacherName(teacherName);
     }
 
     public List<String> getAllStudents() {
         return studentRepository.getAllStudents();
     }
 
-    public void deleteTeacherByName(String teacher) {
-        studentRepository.deleteTeacherByName(teacher);
+    public void deleteTeacherByName(String teacherName) {
+        studentRepository.deleteTeacherByName(teacherName);
     }
 
-    public void AllTeachers() {
-        studentRepository.AllTeachers();
+    public void deleteAllTeachers() {
+        studentRepository.deleteAllTeachers();
     }
 }
