@@ -1,28 +1,43 @@
 package com.driver;
 
 public class Teacher {
+
     private String name;
+
     private int numberOfStudents;
+
     private int age;
 
-    public Teacher() {  // default Constructor
+    public Teacher() {
     }
-    //Paramterised Constructors
+
     public Teacher(String name, int numberOfStudents, int age) {
         this.name = name;
         this.numberOfStudents = numberOfStudents;
         this.age = age;
     }
 
-    // Getter & Setter
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public String getName() {
+        return name;
+    }
 
-    public int getNumberOfStudents() { return numberOfStudents; }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getNumberOfStudents() {
+        return numberOfStudents;
+    }
+
     public void setNumberOfStudents(int numberOfStudents) {
         this.numberOfStudents = numberOfStudents;
     }
 
-    public int getAge() { return age; }
-    public void setAge(int age) { this.age = age; }
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 }
